@@ -1,0 +1,45 @@
+
+---------------------------- GLEW ----------------
+
+.........Installing glew 
+
+//I am using Debian Buster on pentium dual core cpu, 
+
+Downloaded glew-2.1.0.tgz file and saved /home/praveen/RND/opengl/
+
+
+$>gzip -d glew-2.1.0.tgz 
+
+$>tar -xvf glew-2.1.0.tar
+
+$>cd glew-2.1.0
+
+$>export GLEW_DEST=/home/praveen/RND/opengl/extentionlibs/glew
+
+$>make install.all
+
+
+........Installing glfw
+
+Downloaded glfw-master.zip and saved to /home/praveen/RND/opengl unzipped the file
+
+$>cd glfw-master
+
+Installed following dependencies as my gdm is using wayland
+
+apt-get install libwayland-dev // actually its already present in my system
+apt-get install wayland-protocols
+apt-get install extra-cmake-modules
+apt-get install libxkbcommon-dev
+
+// I opted of out of tree installation, so created following path
+$>cd /home/praveen/RND/opengl/extentionlibs/glfw 
+
+$>cmake -DGLFW_USE_WAYLAND=ON /home/praveen/RND/opengl/glfw-master/
+Above command generated makefile
+$>make DESTDIR=/home/praveen/RND/opengl/extensionlibs/glfw  install
+
+Conclusion: I need to learn cmake ASAP :), but somehow successfully installed glew and glfw
+
+
+
